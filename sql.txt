@@ -1,0 +1,4 @@
+INSERT INTO best_customers401529(first_name,last_name,email,lat,long)
+	SELECT * FROM CUSTOMERS_401529 WHERE 
+	ST_DistanceSpheroid(ST_MakePoint(lat,long),
+	ST_MakePoint(41.39988501005976, -75.67329768604034),'SPHEROID["WGS 84",6378137,298.257223563]') <=50000
